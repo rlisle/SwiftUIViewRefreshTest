@@ -39,8 +39,17 @@ struct ContentView: View {
     
     @StateObject var model = Model()
     
-    @State private var var3: Bool = false
-    @State private var var4: Bool = false
+    @State private var var3: Bool = false {
+        didSet {
+            tracker("var3 value changed to \(var3)")
+        }
+    }
+    
+    @State private var var4: Bool = false {
+        didSet {
+            tracker("var4 value changed to \(var4)")
+        }
+    }
     
     let tracker = InstanceTracker("ContentView")
     
@@ -103,7 +112,6 @@ struct ContentView: View {
                 
                 Button(action: {
                     var3.toggle()
-                    print("var3 is \(var3 ? "On" : "Off")")
                 }, label: {
                     Text("\(var3 ? "Clear " : "Set ") @State var3")
                         .frame(maxWidth: .infinity, alignment: .center)
@@ -116,7 +124,6 @@ struct ContentView: View {
                 
                 Button(action: {
                     var4.toggle()
-                    print("var4 is \(var4 ? "On" : "Off")")
                 }, label: {
                     Text("\(var4 ? "Clear " : "Set ") @State var4")
                         .frame(maxWidth: .infinity, alignment: .center)
