@@ -3,6 +3,7 @@
 //  ViewRefreshTest
 //
 //  This project attempts to prove when views are updated.
+//  Based in great part on the code from https://medium.com/swlh/deep-inside-views-state-and-performance-in-swiftui-d23a3a44b79
 //
 //  Created by Ron Lisle on 8/21/21.
 //
